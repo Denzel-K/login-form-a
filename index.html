@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Registration form</title>
+
+    <link rel="stylesheet" href="CSS/main.css">
+</head>
+<body>
+    <main>
+        <h1>
+            <span>User</span>
+            <span class="selected">Login</span>
+        </h1>
+
+        <div class="container">
+            <div class="options">
+                <div id="login" class="active option">Login</div>
+                <div id="register" class="option">Register</div>
+            </div>
+
+
+            <div class="info_a">
+                <form>
+                    <div>
+                        <input id="username" class="inputs" type="text" placeholder="Username">
+                    </div>
+                    <div>
+                        <input id="password" class="inputs"type="text" placeholder="Password">
+                    </div>
+                    <div>
+                        <input class="check" type="checkbox">
+                        Remember me
+                    </div>
+                </form>
+
+                <button type="button" class="btn" id="btn_a">Login</button>
+            </div>
+
+            <div class="info_b hidden">
+                <form>
+                    <div>
+                        <input id="mail" class="inputs" type="email" placeholder="Email Address">
+                        <div id="validity"></div>
+                    </div>
+                    <div>
+                        <input id="user" class="inputs" type="text" placeholder="Set Username">
+                    </div>
+                    <div>
+                        <input id="password" class="inputs" type="text" placeholder="Password">
+                    </div>
+                    <div>
+                        <input id="password_b" class="inputs" type="text" placeholder="Confirm password">
+                        <div class="confirmation"></div>
+                    </div>
+                </form>
+
+                <button type="button" class="btn" id="btn_b">Register</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
