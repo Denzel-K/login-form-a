@@ -7,10 +7,57 @@
     --btn-hover: hsl(233, 47%, 7%);
     --btn-active: hsl(0, 0%, 100%, .7);
     --h-text:  hsl(277, 64%, 61%);
+    --txt: hsl(0, 0%, 100%, .7);
+    --txt-fade: hsl(0, 0%, 100%, .4);
+}
+.theme_d2 {
+    --main-bg: hsl(230, 12%, 8%);
+    --container-bg: hsl(213, 19%, 18%);
+    --btn: hsl(25, 97%, 53%);
+    --h-text: hsl(25, 97%, 53%);
+    --input-bg: hsl(210, 12%, 10%);
+}
+.theme_l1 {
+    --main-bg: hsl(0, 0%, 92%);
+    --container-bg:  hsl(0, 0%, 78%);
+    --input-bg: hsl(0, 0%, 96%);
+    --input-txt: hsl(233, 47%, 7%);
+    --txt: hsl(233, 47%, 7%);
+    --txt-fade: hsl(233, 47%, 7%, .5);
+    --h-text:  hsl(277, 64%, 50%);
+    --btn-hover:  hsl(0, 0%, 92%);
+    --btn-active:  hsl(233, 47%, 7%);
+}
+.theme_l2 {
+    --main-bg: hsl(0, 0%, 92%);
+    --container-bg:  hsl(0, 0%, 78%);
+    --input-bg: hsl(0, 0%, 96%);
+    --input-txt: hsl(233, 47%, 7%);
+    --txt: hsl(233, 47%, 7%);
+    --txt-fade: hsl(233, 47%, 7%, .5);
+    --h-text:  hsl(25, 97%, 53%);
+    --btn-hover:  hsl(0, 0%, 92%);
+    --btn-active:  hsl(233, 47%, 7%);
+    --btn: hsl(25, 97%, 53%);
+
 }
 
 body {
     background-color: var(--main-bg);
+}
+.td1 {
+    background-color:hsl(277, 64%, 61%);
+}
+.td2 {
+    background-color:hsl(25, 97%, 53%);
+}
+.tl1 {
+    background-color:white;
+    border: 2px solid hsl(277, 64%, 61%);
+}
+.tl2 {
+    background-color:white;
+    border: 2px solid hsl(25, 97%, 53%);
 }
 .container {
     background-color:var(--container-bg);
@@ -19,7 +66,9 @@ input {
     background-color: var(--input-bg);
     color: var(--input-txt);
 }
-
+.options {
+    border-bottom: 2px solid var(--txt-fade);
+}
 .btn {
     background-color: var(--btn);
 }
@@ -36,23 +85,27 @@ input {
 
 h1 {
     span:nth-child(1) {
-        color: var(--input-txt);
+        color: var(--txt);
     }
     span:nth-child(2) {
         color: var(--h-text);
     }
 }
-
+h2 {
+    color: var(--h-text);
+}
+p {
+    color: var(--txt);
+}
 .options {
-    color: var(--input-txt);
+    color: var(--txt);
     
     & div:hover {
-        color: var(--btn);
+        color: var(--h-text);
         cursor: pointer;
     }
 
     .active {
-        color: var(--btn);
-        border-bottom: 2px solid var(--btn);
+        color: var(--h-text);
     }
 }

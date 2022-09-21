@@ -6,6 +6,7 @@ const login_opt = document.querySelector('#login');
 const reg_opt = document.querySelector('#register');
 const selected = document.querySelector('.selected');
 
+
 login_opt.addEventListener ('click', ()=> {
     login_opt.classList.add ("active");
     reg_opt.classList.remove ("active");
@@ -27,6 +28,69 @@ reg_opt.addEventListener ('click', ()=> {
 })
 
 
+//Theme change
+
+const td_a = document.querySelector('.td1');
+const td_b = document.querySelector('.td2');
+const td_c = document.querySelector('.tl1');
+const td_d = document.querySelector('.tl2');
+const body = document.querySelector('body');
+
+
+td_a.addEventListener ('click', () => {
+        body.classList.remove ('theme_d2');
+        body.classList.remove ('theme_l1');
+        body.classList.remove ('theme_l2');
+
+        td_a.classList.add ("themed");
+        td_b.classList.remove ("themed");
+        td_c.classList.remove ("themed_b");
+        td_d.classList.remove ("themed_b");
+})
+
+td_b.addEventListener ('click', () => {
+    body.classList.add ('theme_d2');
+    body.classList.remove ('theme_l1');
+    body.classList.remove ('theme_l2');
+
+    td_a.classList.remove ("themed");
+    td_b.classList.add ("themed");
+    td_c.classList.remove ("themed_b");
+    td_d.classList.remove ("themed_b");
+})
+
+td_c.addEventListener ('click', () => {
+    body.classList.add ('theme_l1');
+    body.classList.remove ('theme_d2');
+    body.classList.remove ('theme_l2');
+
+    td_a.classList.remove ("themed");
+    td_c.classList.add ("themed_b");
+    td_b.classList.remove ("themed");
+    td_d.classList.remove ("themed_b");
+})
+
+td_d.addEventListener ('click', () => {
+    body.classList.add ('theme_l2');
+    body.classList.remove ('theme_d2');
+    body.classList.remove ('theme_l1');
+
+    td_a.classList.remove ("themed");
+    td_d.classList.add ("themed_b");
+    td_b.classList.remove ("themed");
+    td_c.classList.remove ("themed_b");
+})
+
+
+//Reload using home button
+
+const home = document.querySelector('.home');
+
+home.addEventListener ('click', ()=> {
+    window.location.reload(true);
+})
+
+
 
 // EMAIL VALIDITY CHECK & PASSWORD CONFIRMATION
 
@@ -39,8 +103,8 @@ function submition() {
     var text = document.getElementById('validity');
     var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
-    const password = document.querySelector('#password');
-    const confirm = document.querySelector('#password_b');
+    const password = document.querySelector('#password').value;
+    const confirm = document.querySelector('#password_b').value;
     const confirmation = document.querySelector('.confirmation');
 
 
@@ -48,12 +112,12 @@ function submition() {
         text.innerHTML ="";
         text.style ="padding: 0; width: 100%; border-top: none";
     }
-    else {
-        text.innerHTML ="Invalid <span><img src='Images/icon-error.svg' alt='error'></span>";
+    else if (email == "") {
+        text.innerHTML ="Required <span><img src='Images/icon-error.svg' alt='error'></span>";
         text.style = "display: flex; justify-content: space-between; align-items: center; font-size: 14px; background-color: hsl(0, 94%, 66%); color: white; padding: 8px; width: 92%";
     }
-    if (email == "") {
-        text.innerHTML ="Required <span><img src='Images/icon-error.svg' alt='error'></span>";
+    else {
+        text.innerHTML ="Invalid <span><img src='Images/icon-error.svg' alt='error'></span>";
         text.style = "display: flex; justify-content: space-between; align-items: center; font-size: 14px; background-color: hsl(0, 94%, 66%); color: white; padding: 8px; width: 92%";
     }
 
@@ -65,6 +129,12 @@ function submition() {
     else{
         confirmation.innerHTML ="passwords don't match <span><img src='Images/icon-error.svg' alt='error'></span>";
         confirmation.style = "display: flex; justify-content: space-between; align-items: center; font-size: 14px; background-color: hsl(0, 94%, 66%); color: white; padding: 8px; width: 86%";
+    }
+
+    if (email.match(pattern) && password === confirm) {
+        const thanks = document.querySelector('.info_c');
+
+        thanks.style = "display: block"
     }
 }
 
