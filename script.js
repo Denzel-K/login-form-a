@@ -132,8 +132,12 @@ function submition() {
         confirmation.innerHTML ="";
         confirmation.style ="padding: 0; width: 100%; border-top: none";
     }
-    else{
+    else if (password !== confirm) {
         confirmation.innerHTML ="passwords don't match <span><img src='Images/icon-error.svg' alt='error'></span>";
+        confirmation.style = "display: flex; justify-content: space-between; align-items: center; font-size: 14px; background-color: hsl(0, 94%, 66%); color: white; padding: 8px; width: 86%"
+    }
+    else{
+        confirmation.innerHTML ="Required <span><img src='Images/icon-error.svg' alt='error'></span>";
         confirmation.style = "display: flex; justify-content: space-between; align-items: center; font-size: 14px; background-color: hsl(0, 94%, 66%); color: white; padding: 8px; width: 86%";
     }
 
