@@ -74,8 +74,14 @@ header {
     align-items: center;
     justify-content: center;
 }
-.info_c {
+.thank_you {
     display: none;
+
+    & div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
 .hidden {
     display: none;

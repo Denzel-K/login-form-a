@@ -82,11 +82,17 @@ td_d.addEventListener ('click', () => {
 })
 
 
-//Reload using home button
+//Reload using home button & "back to login" button
 
 const home = document.querySelector('.home');
+const home_b = document.querySelector('.home_b');
+
 
 home.addEventListener ('click', ()=> {
+    window.location.reload(true);
+})
+
+home_b.addEventListener ('click', ()=> {
     window.location.reload(true);
 })
 
@@ -121,6 +127,7 @@ function submition() {
         text.style = "display: flex; justify-content: space-between; align-items: center; font-size: 14px; background-color: hsl(0, 94%, 66%); color: white; padding: 8px; width: 92%";
     }
 
+    
     if (password === confirm) {
         confirmation.innerHTML ="";
         confirmation.style ="padding: 0; width: 100%; border-top: none";
@@ -129,10 +136,23 @@ function submition() {
         confirmation.innerHTML ="passwords don't match <span><img src='Images/icon-error.svg' alt='error'></span>";
         confirmation.style = "display: flex; justify-content: space-between; align-items: center; font-size: 14px; background-color: hsl(0, 94%, 66%); color: white; padding: 8px; width: 86%";
     }
-    /*if (email.match(pattern) && password === confirm) {
+
+    //Display Thank you card
+
+    if (email.match(pattern) && password === confirm) {
         const thanks = document.querySelector('.info_c');
+        const options = document.querySelector('.options');
+        const media = document.querySelector('.media');
 
         thanks.style = "display: block"
-    }*/
+        log.style = "display: none"
+        registration.style = "display: none"
+        options.style = "display: none"
+        media.style = "display: none"
+
+    }
+    else {
+        thanks.style = "display: none"
+    }
 }
 
