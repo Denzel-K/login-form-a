@@ -104,7 +104,7 @@ function submition() {
     var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
     const password = document.querySelector('#password').value;
-    const confirm = document.querySelector('#password_b').value;
+    const confirm = document.querySelector('#confirm').value;
     const confirmation = document.querySelector('.confirmation');
 
 
@@ -121,7 +121,6 @@ function submition() {
         text.style = "display: flex; justify-content: space-between; align-items: center; font-size: 14px; background-color: hsl(0, 94%, 66%); color: white; padding: 8px; width: 92%";
     }
 
-
     if (password === confirm) {
         confirmation.innerHTML ="";
         confirmation.style ="padding: 0; width: 100%; border-top: none";
@@ -130,11 +129,10 @@ function submition() {
         confirmation.innerHTML ="passwords don't match <span><img src='Images/icon-error.svg' alt='error'></span>";
         confirmation.style = "display: flex; justify-content: space-between; align-items: center; font-size: 14px; background-color: hsl(0, 94%, 66%); color: white; padding: 8px; width: 86%";
     }
-
-    if (email.match(pattern) && password === confirm) {
+    /*if (email.match(pattern) && password === confirm) {
         const thanks = document.querySelector('.info_c');
 
         thanks.style = "display: block"
-    }
+    }*/
 }
 
