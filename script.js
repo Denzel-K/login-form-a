@@ -210,3 +210,24 @@ shows.forEach (show => {
     });
 })
 
+
+
+//STORE USER INPUT IN LOCAL STORAGE 
+let info = [];
+
+function store() {
+    let userdata = {
+        id: Date.now(),
+        username: document.querySelector('#user').value,
+        email: document.querySelector('#mail').value
+    }
+
+    info.push(userdata);
+    document.querySelector ('form').reset();
+
+    localStorage.setItem ('User', JSON.stringify(info))
+}
+
+document.addEventListener ('DOMContentLoaded', ()=> {
+    submit.addEventListener ('click', store);
+})
