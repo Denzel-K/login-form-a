@@ -40,10 +40,14 @@
             <div class="info_a">
                 <form>
                     <div>
-                        <input id="username" class="inputs" type="text" placeholder="Username">
+                        <input id="username" type="text" placeholder="Username">
                     </div>
-                    <div>
-                        <input id="pass" class="inputs"type="text" placeholder="Password">
+                    <div class="lock">
+                        <input id="pass" class="inputs" type="password" placeholder="Password">
+
+                        <div class="show">
+                            <img class="reveal" src="Images/show.svg" alt="show">
+                        </div>
                     </div>
                     <div>
                         <a href="#" class="forgot">
@@ -58,24 +62,28 @@
             <div class="info_b hidden">
                 <form>
                     <div>
-                        <input id="mail" class="inputs" type="email" placeholder="Email Address">
+                        <input id="mail" type="email" placeholder="Email Address">
                         <div id="validity"></div>
                     </div>
                     <div>
-                        <input id="user" class="inputs" type="text" placeholder="Set Username">
+                        <input id="user" type="text" placeholder="Set Username">
                     </div>
-                    <div>
+                    <div class="lock">
                         <input id="password" class="inputs" type="password" placeholder="Password">
+
+                        <div class="show">
+                            <img class="reveal" src="Images/show.svg" alt="show">
+                        </div>
                     </div>
-                    <div>
+                    <div class="lock">
                         <input id="confirm" class="inputs" type="password" placeholder="Confirm password">
-                        <div class="confirmation"></div>
+
+                        <div class="show">
+                            <img class="reveal" src="Images/show.svg" alt="show">
+                        </div>
                     </div>
 
-                    <!--<div class="show">
-                        <img src="Images/eye-svgrepo-com.svg" alt="show">
-                    </div>
-                    -->
+                    <div class="confirmation"></div>          
                 </form>
 
                 <button type="button" class="btn" id="btn_b">Register</button>

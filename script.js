@@ -179,3 +179,34 @@ forgot.addEventListener ('click', ()=> {
     options.style = "display:none";
     media.style = "display:none";
 })
+
+
+
+// SHOW | HIDE PASSWORD
+
+const shows = document.querySelectorAll('.show');
+const reveals = document.querySelectorAll('.reveal');
+const passwords = document.querySelectorAll('.inputs');
+
+shows.forEach (show => {
+    show.addEventListener ('click', ()=> {
+
+        passwords.forEach (password => {
+            if (password.type === 'password') {
+                password.setAttribute ('type', 'text');
+
+                reveals.forEach (reveal => {
+                    reveal.src ="Images/hide.svg";
+                })
+            }
+            else {
+                password.setAttribute ('type', 'password');
+
+                reveals.forEach (reveal => {
+                    reveal.src ="Images/show.svg";
+                })
+            }
+        })
+    });
+})
+
