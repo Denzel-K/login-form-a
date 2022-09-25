@@ -87,7 +87,6 @@ td_d.addEventListener ('click', () => {
 const home = document.querySelector('.home');
 const home_b = document.querySelector('.home_b');
 
-
 home.addEventListener ('click', ()=> {
     window.location.reload(true);
 })
@@ -143,20 +142,40 @@ function submition() {
 
     //Display Thank you card
 
-    if (email.match(pattern) && password === confirm) {
-        const thanks = document.querySelector('.info_c');
-        const options = document.querySelector('.options');
-        const media = document.querySelector('.media');
+    let thanks = document.querySelector('.info_c');
+    let options = document.querySelector('.options');
+    let media = document.querySelector('.media');
 
-        thanks.style = "display: block"
-        log.style = "display: none"
-        registration.style = "display: none"
-        options.style = "display: none"
-        media.style = "display: none"
+    if (email.match(pattern) && password === confirm) {
+
+        thanks.style = "display: block";
+        log.style = "display: none";
+        registration.style = "display: none";
+        options.style = "display: none";
+        media.style = "display: none";
 
     }
     else {
-        thanks.style = "display: none"
+        thanks.style = "display: none";
     }
 }
 
+
+//FORGOT PASSWORD ACTION
+
+const forgot = document.querySelector('.forgot');
+
+forgot.addEventListener ('click', ()=> {
+    const head = document.querySelector ('h1');
+    let options = document.querySelector('.options');
+    let media = document.querySelector('.media');
+    let reset = document.querySelector('.info_d');
+
+    head.innerHTML = "<span>Password</span><span> Reset</span>";
+    reset.classList.add ('reset');
+
+    log.style = "display:none";
+    registration.style = "display:none";
+    options.style = "display:none";
+    media.style = "display:none";
+})

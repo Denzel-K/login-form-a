@@ -113,3 +113,9 @@ p {
 .media {
     background-color: var(--container-bg);
 }
+.forgot {
+    color: var(--txt-fade);
+}
+.forgot:hover {
+    color: var(--txt);
+}
