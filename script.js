@@ -111,6 +111,7 @@ function submition() {
     const password = document.querySelector('#password').value;
     const confirm = document.querySelector('#confirm').value;
     const confirmation = document.querySelector('.confirmation');
+    const userName = document.querySelector ('#user').value;
 
 
     if (email.match(pattern)) {
@@ -153,7 +154,9 @@ function submition() {
         registration.style = "display: none";
         options.style = "display: none";
         media.style = "display: none";
-
+        localStorage.setItem('name', userName);
+        localStorage.setItem('pw', password);
+        alert('Your account has been created');
     }
     else {
         thanks.style = "display: none";
@@ -213,13 +216,14 @@ shows.forEach (show => {
 
 
 //STORE USER INPUT IN LOCAL STORAGE 
-let info = [];
+/*let info = [];
 
 function store() {
     let userdata = {
         id: Date.now(),
         username: document.querySelector('#user').value,
-        email: document.querySelector('#mail').value
+        email: document.querySelector('#mail').value,
+        pw: document.querySelector('#password').value
     }
 
     info.push(userdata);
@@ -230,4 +234,24 @@ function store() {
 
 document.addEventListener ('DOMContentLoaded', ()=> {
     submit.addEventListener ('click', store);
+})*/
+
+
+//AUTHENTICATE WITH LOGIN
+
+const loginPress = document.querySelector('#btn_a');
+
+loginPress.addEventListener ('click', ()=> {
+
+    var storedName = localStorage.getItem('name');
+    var storedPw = localStorage.getItem('pw');
+
+    var userName = document.getElementById('username');
+    var userPw = document.getElementById('pass');
+
+    if(userName.value == storedName && userPw.value == storedPw){
+        alert('You are logged in.');
+    }else{
+        alert('Error on login');
+    }
 })
